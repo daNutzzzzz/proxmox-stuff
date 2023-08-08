@@ -22,7 +22,7 @@ nodes failed at once. But having a full cluster config backup is still useful an
 The script must be run as root, and can be run from cron or an interactive terminal.
 
 ## Backup
-* Download the [script](https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh)  
+* Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_backup.sh)  
 ```cd /root/; wget -qO- https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh```
 * Set the permanent backups directory environment variable ```export BACK_DIR="/path/to/backup/directory"``` or edit the script to set the `$DEFAULT_BACK_DIR` variable to your preferred backup directory
 * Make the script executable ```chmod +x ./prox_config_backup.sh```
@@ -89,7 +89,7 @@ You should be back where you started. But let's hope it never comes to that.
 
 ### Script
 
-* Download the [script](https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_restore.sh)  
+* Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh)  
 ```cd /root/; wget -qO- https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_restore.sh```
 * Make the script executable ```chmod +x ./prox_config_restore.sh```
 * Run the script ```./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz```
