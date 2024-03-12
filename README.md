@@ -98,8 +98,7 @@ You should be back where you started. But let's hope it never comes to that.
 * /home/rclone/
 * /home/Scripts/
 
-####
-* Fix disk issues
+#### Fix disk issues (if restoring to new host)
 ```
 # Get UUID of disk
 blkid or note UUID from mkfs
