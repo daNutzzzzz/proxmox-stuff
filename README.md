@@ -98,6 +98,15 @@ You should be back where you started. But let's hope it never comes to that.
 * /home/rclone/
 * /home/Scripts/
 
+####
+* Fix disk issues
+```
+# Get UUID of disk
+blkid or note UUID from mkfs
+
+# Add disk to fstab
+sudo nano /etc/fstab
+```
 
 #### Re-permission files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
