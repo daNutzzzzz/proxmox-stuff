@@ -94,10 +94,6 @@ You should be back where you started. But let's hope it never comes to that.
 * Make the script executable ```chmod +x ./prox_config_restore.sh```
 * Run the script ```./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz```
 
-#### Restore folders/files, example:
-* /home/rclone/
-* /home/Scripts/
-
 #### Fix disk issues (if restoring to new host)
 ```
 # Get UUID of disk
@@ -107,8 +103,14 @@ blkid or note UUID from mkfs
 sudo nano /etc/fstab
 ```
 
+#### Restore folders/files, example:
+* /home/rclone/
+* /home/Scripts/
+* 
 #### Re-permission files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
+
+#### Reboot
 
 ## Sources
 http://ziemecki.net/content/proxmox-config-backups
