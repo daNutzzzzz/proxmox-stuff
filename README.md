@@ -120,13 +120,13 @@ sudo nano /etc/fstab
 # Show current interfaces
 ```ifconfig -a``` or ```ip addr``` or ```ip link show```
 
-# Correct Network Interace Config
+#### Correct Network Interace Config
 ```nano /etc/network/interfaces```
 
-# Restart Network Service
+#### Restart Network Service
 ```systemctl restart systemd-networkd``` or ```service network-manager restart```
 
-# Bring interfaces UP if they are DOWN
+#### Bring interfaces UP if they are DOWN
 ```ip link set dev <interface> up```
 
 #### Restore folders/files, example:
