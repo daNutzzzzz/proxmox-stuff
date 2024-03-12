@@ -136,8 +136,6 @@ sudo nano /etc/fstab
 #### Re-permission files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
 
-#### Reboot
-
 #### Reinstall Netdata Agent if required
 ```https://app.netdata.cloud/spaces/```
 
@@ -145,6 +143,8 @@ sudo nano /etc/fstab
 ```rm /var/lib/netdata/registry/netdata.public.unique.id```
 
 ##### re-run agent instalation script
+
+### Reboot Node
 
 ## Sources
 http://ziemecki.net/content/proxmox-config-backups
