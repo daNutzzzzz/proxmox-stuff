@@ -121,10 +121,13 @@ sudo nano /etc/fstab
 ```ifconfig -a``` or ```ip addr``` or ```ip link show```
 
 # Correct Network Interace Config
-nano /etc/network/interfaces
+```nano /etc/network/interfaces```
 
-#restart Network Service
+# Restart Network Service
 ```systemctl restart systemd-networkd``` or ```service network-manager restart```
+
+# Bring interfaces UP if they are DOWN
+```ip link set dev <interface> up```
 
 #### Restore folders/files, example:
 * /home/rclone/
