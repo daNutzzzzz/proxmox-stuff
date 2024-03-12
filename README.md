@@ -92,13 +92,13 @@ You should be back where you started. But let's hope it never comes to that.
 #### Get current disk values (if restoring to new host)
 ```
 # Add disk to fstab
-`cat /etc/fstab`
+cat /etc/fstab
 
 # Get UUID of disk
-`blkid`
+blkid
 
 # Get disk structure
-`lsblk`
+lsblk
 ```
 
 * Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh)  
@@ -120,7 +120,7 @@ sudo nano /etc/fstab
 #### Restore folders/files, example:
 * /home/rclone/
 * /home/Scripts/
-* 
+
 #### Re-permission files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
 
