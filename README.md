@@ -138,5 +138,8 @@ sudo nano /etc/fstab
 
 #### Reboot
 
+#### Reinstall Netdata Agent if required
+```https://app.netdata.cloud/spaces/dan-durden-space/rooms/home/overview#metrics_correlation=false&after=-900&before=0&utc=Europe%2FLondon&offset=%2B1&timezoneName=Edinburgh%2C%20London&modal=&modalTab=&modalParams=&selectedIntegrationCategory=deploy.operating-systems&21c29b58-8fcc-4c43-820a-a593a6c1c9dc--chartName=menu_system&521fb6bf-2d19-4b0d-b154-366207410f4a--chartName=menu_system```
+
 ## Sources
 http://ziemecki.net/content/proxmox-config-backups
