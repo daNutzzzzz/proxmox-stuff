@@ -116,8 +116,8 @@ blkid or note UUID from mkfs
 sudo nano /etc/fstab
 ```
 
-#### Fix network interface issues (if restoring to new host)
-# Show current interfaces
+### Fix network interface issues (if restoring to new host)
+#### Show current interfaces
 ```ifconfig -a``` or ```ip addr``` or ```ip link show```
 
 #### Correct Network Interace Config
