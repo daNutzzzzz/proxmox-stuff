@@ -107,7 +107,6 @@ lsblk
 * Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
 * Prexx `ctrl + c` to exit instead of reboot
 
-
 #### Fix disk issues (if restoring to new host)
 ```
 # Get UUID of disk
@@ -116,6 +115,16 @@ blkid or note UUID from mkfs
 # Add disk to fstab
 sudo nano /etc/fstab
 ```
+
+#### Fix network interface issues (if restoring to new host)
+# Show current interfaces
+```ifconfig -a``` or ```ip addr``` or ```ip link show```
+
+# Correct Network Interace Config
+nano /etc/network/interfaces
+
+#restart Network Service
+```systemctl restart systemd-networkd``` or ```service network-manager restart```
 
 #### Restore folders/files, example:
 * /home/rclone/
