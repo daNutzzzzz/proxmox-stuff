@@ -42,17 +42,24 @@ For more info also see #5.
 
 # Bash Scripts
 
+## Backup Scripts
+
 ### Cron
 
-To set up a automatic cron job on a monthly (```/etc/cron.weekly``` or ```/etc/cron.daily``` can be used to!) schedule, running the prox_config_backup script, follow these steps:
+* To set up a automatic cron job on a monthly (```/etc/cron.daily``` or ```/etc/cron.weekly``` can be used to!) schedule, running the prox_config_backup script, follow these steps:
+```wget https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh -O /etc/cron.daily/prox_config_backup```
 
-```wget https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh -O /etc/cron.monthly/prox_config_backup```
+* Make the script executable ```chmod +x ./prox_config_restore.sh```
 
-Change ```DEFAULT_BACK_DIR="/mnt/pve/truenas_backup/pve"``` and ```MAX_BACKUPS=5``` to the values you want!
+* Change ```DEFAULT_BACK_DIR="/home/pve"``` and ```MAX_BACKUPS=7``` to the values you want!
 
 Optional: [Execute run-parts](https://superuser.com/questions/402781/what-is-run-parts-in-etc-crontab-and-how-do-i-use-it) to see if it contains errors:
 
+```run-parts -v --test /etc/cron.daily```
+```run-parts -v --test /etc/cron.weekly```
 ```run-parts -v --test /etc/cron.monthly```
+
+## Restore Options
 
 ### Manually
 
@@ -105,7 +112,7 @@ lsblk
 ```cd /root/; wget -qO prox_config_restore.sh https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh```
 * Make the script executable ```chmod +x ./prox_config_restore.sh```
 * Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
-* Press `ctrl + c` to exit instead of reboot
+* Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
 
 #### Fix disk issues (if restoring to new host)
 ```
