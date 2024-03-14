@@ -71,6 +71,8 @@ _filename5="$_tdir/proxmoxvbios.$_now.tar"
 _filename6="$_tdir/proxmoxpackages.$_now.list"
 _filename7="$_tdir/proxmoxreport.$_now.txt"
 _filename8="$_tdir/proxmoxlocalbin.$_now.tar"
+_filename9="$_tdir/proxmoxhome1.$_now.tar"
+_filename10="$_tdir/proxmoxhome2.$_now.tar"
 _filename_final="$_tdir/proxmox_backup_"$_HOSTNAME"_"$_now".tar.gz"
 
 ##########
@@ -86,7 +88,7 @@ function description {
         Timestamp: "$_now"
 
         Files to be saved:
-        "/etc/*, /var/lib/pve-cluster/*, /root/*, /var/spool/cron/*, /usr/share/kvm/*.vbios"
+        "/etc/*, /var/lib/pve-cluster/*, /root/*, /var/spool/cron/*, /usr/share/kvm/*.vbios, /home/*"
 
         Backup target:
         "$_bdir"
@@ -129,6 +131,8 @@ function copyfilesystem {
     tar --warning='no-file-ignored' -cvPf "$_filename2" /var/lib/pve-cluster/.
     tar --warning='no-file-ignored' -cvPf "$_filename3" --one-file-system /root/.
     tar --warning='no-file-ignored' -cvPf "$_filename4" /var/spool/cron/.
+    tar --warning='no-file-ignored' -cvPf "$_filename9" --one-file-system /home/rclone/.
+    tar --warning='no-file-ignored' -cvPf "$_filename10" --one-file-system /home/Scripts/.
 
     if [ "$(ls -A /usr/local/bin 2>/dev/null)" ]; then tar --warning='no-file-ignored' -cvPf "$_filename8" /usr/local/bin/.; fi
 
