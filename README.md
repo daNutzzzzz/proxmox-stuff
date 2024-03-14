@@ -98,17 +98,17 @@ You should be back where you started. But let's hope it never comes to that.
 * Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
 * Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
 
-#### Other Hardware Restore Process
+## Other Hardware Restore Process
 
-#### Install Proxmox
+### Install Proxmox
 
 Install Proxmox onto new Hardware, values entered don’t matter as they will be replaced, just ensure you have network configured for temporary access.
 
-#### Access Prxomox
+### Access Prxomox
 
 Access Prxomox fresh install via temp IP/PW.
 
-#### Get current disk values (if restoring to new host)
+### Get current disk values (if restoring to new host)
 ```
 # Add disk to fstab
 cat /etc/fstab
@@ -126,7 +126,7 @@ lsblk
 * Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
 * Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
 
-#### Fix disk issues (if restoring to new host)
+### Fix disk issues (if restoring to new host)
 ```
 # Get UUID of disk
 blkid or note UUID from mkfs
@@ -136,32 +136,32 @@ sudo nano /etc/fstab
 ```
 
 ### Fix network interface issues (if restoring to new host)
-#### Show current interfaces
+### Show current interfaces
 ```ifconfig -a``` or ```ip addr``` or ```ip link show```
 
-#### Correct Network Interace Config
+### Correct Network Interace Config
 ```nano /etc/network/interfaces```
 
-#### Restart Network Service
+### Restart Network Service
 ```systemctl restart systemd-networkd``` or ```service network-manager restart```
 
-#### Bring interfaces UP if they are DOWN
+### Bring interfaces UP if they are DOWN
 ```ip link set dev <interface> up```
 
-#### Restore folders/files, example:
+### Restore folders/files, example:
 * /home/rclone/
 * /home/Scripts/
 
-#### Re-permission files
+### Re-permission files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
 
-#### Reinstall Netdata Agent if required
+### Reinstall Netdata Agent if required
 ```https://app.netdata.cloud/spaces/```
 
-##### If you get the error **Failed to claim node because the Cloud thinks it is already claimed.**
+#### If you get the error **Failed to claim node because the Cloud thinks it is already claimed.**
 ```rm /var/lib/netdata/registry/netdata.public.unique.id```
 
-##### re-run agent instalation script
+#### re-run agent instalation script
 
 ### Reboot Node
 
