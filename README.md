@@ -92,6 +92,22 @@ You should be back where you started. But let's hope it never comes to that.
 
 ### Script
 
+* Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh)  
+```cd /root/; wget -qO prox_config_restore.sh https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh```
+* Make the script executable ```chmod +x ./prox_config_restore.sh```
+* Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
+* Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
+
+#### Other Hardware Restore Process
+
+#### Install Proxmox
+
+Install Proxmox onto new Hardware, values entered don’t matter as they will be replaced, just ensure you have network configured for temporary access.
+
+#### Access Prxomox
+
+Access Prxomox fresh install via temp IP/PW.
+
 #### Get current disk values (if restoring to new host)
 ```
 # Add disk to fstab
@@ -151,3 +167,5 @@ sudo nano /etc/fstab
 
 ## Sources
 http://ziemecki.net/content/proxmox-config-backups
+
+
