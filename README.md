@@ -21,7 +21,8 @@ nodes failed at once. But having a full cluster config backup is still useful an
 
 The script must be run as root, and can be run from cron or an interactive terminal.
 
-## Backup
+## Backup - interactive terminal
+
 * Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_backup.sh)  
 ```cd /root/; wget -qO- https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_backup.sh```
 * Set the permanent backups directory environment variable ```export BACK_DIR="/path/to/backup/directory"``` or edit the script to set the `$DEFAULT_BACK_DIR` variable to your preferred backup directory
@@ -29,35 +30,30 @@ The script must be run as root, and can be run from cron or an interactive termi
 * Shut down ALL VMs + LXC Containers if you want to go the safe way. (Not required)
 * Run the script ```./prox_config_backup.sh```
 
+### Cron
+
+* To set up a automatic cron job on a monthly (```/etc/cron.daily``` or ```/etc/cron.weekly``` can be used to!) schedule, running the prox_config_backup script, follow these steps:
+```wget https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh -O /etc/cron.daily/prox_config_backup```
+* Make the script executable ```chmod +x ./prox_config_restore.sh```
+* Change ```DEFAULT_BACK_DIR="/home/pve"``` and ```MAX_BACKUPS=7``` to the values you want!
+
+Optional: [Execute run-parts](https://superuser.com/questions/402781/what-is-run-parts-in-etc-crontab-and-how-do-i-use-it) to see if it contains errors:
+```run-parts -v --test /etc/cron.daily```
+```run-parts -v --test /etc/cron.weekly```
+```run-parts -v --test /etc/cron.monthly```
+
 ### Notification
 
 The script supports [healthchecks.io](https://healthchecks.io) notifications, either to the hosted service, or a self-hosted instance. The notification sends during the final cleanup stage, and either returns 0 to tell Healthchecks that the command was successful, or the exit error code (1-255) to tell Healthchecks that the command failed. To enable:
 * Set the `$HEALTHCHECK` variable to 1
 * Set the `$HEALTHCHECK_URL` variable to the full ping URL for your check. Do not include anything after the UUID, the status flag will be added by the script.
 
-## Restore
+# Restore
 ❗ **ONLY USE THIS SCRIPT ON THE SAME NODE / PROXMOX VERSION, OTHERWISE IT WILL BREAK YOUR FRESH PROXMOX INSTALLATION. IT WILL ALSO FAIL IF YOU ARE RUNNING A CLUSTER!** ❗
 
 For more info also see #5.
 
-# Bash Scripts
-
-## Backup Scripts
-
-### Cron
-
-* To set up a automatic cron job on a monthly (```/etc/cron.daily``` or ```/etc/cron.weekly``` can be used to!) schedule, running the prox_config_backup script, follow these steps:
-```wget https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh -O /etc/cron.daily/prox_config_backup```
-
-* Make the script executable ```chmod +x ./prox_config_restore.sh```
-
-* Change ```DEFAULT_BACK_DIR="/home/pve"``` and ```MAX_BACKUPS=7``` to the values you want!
-
-Optional: [Execute run-parts](https://superuser.com/questions/402781/what-is-run-parts-in-etc-crontab-and-how-do-i-use-it) to see if it contains errors:
-
-```run-parts -v --test /etc/cron.daily```
-```run-parts -v --test /etc/cron.weekly```
-```run-parts -v --test /etc/cron.monthly```
+# prox_config_restore
 
 ## Restore Options
 
