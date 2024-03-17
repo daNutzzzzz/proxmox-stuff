@@ -157,7 +157,9 @@ sudo nano /etc/fstab
 #### If you get the error **Failed to claim node because the Cloud thinks it is already claimed.**
 ```rm /var/lib/netdata/registry/netdata.public.unique.id```
 
-#### re-run agent instalation script
+#### re-run qemu agent instalation script
+```apt-get install qemu-guest-agent```
+```systemctl start qemu-guest-agent```
 
 ### Reboot Node
 
