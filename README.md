@@ -160,6 +160,7 @@ sudo nano /etc/fstab
 #### re-run qemu agent instalation script
 ```apt-get install qemu-guest-agent```
 ```systemctl start qemu-guest-agent```
+```qm set VMID --agent 1```
 
 ### Reboot Node
 
