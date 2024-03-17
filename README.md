@@ -108,6 +108,9 @@ Install Proxmox onto new Hardware, values entered don’t matter as they will be
 
 Access Prxomox fresh install via temp IP/PW.
 
+### Change password (if temp used)
+```passwd root```
+
 ### Get current disk values (if restoring to new host)
 ```
 # Add disk to fstab
