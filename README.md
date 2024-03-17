@@ -160,6 +160,12 @@ sudo nano /etc/fstab
 #### If you get the error **Failed to claim node because the Cloud thinks it is already claimed.**
 ```rm /var/lib/netdata/registry/netdata.public.unique.id```
 
+### Install sensors
+```apt-get install lm-sensors -y```
+```sensors-detect```
+```/etc/init.d/kmod start```
+```systemctl restart netdata```
+
 ### Reboot Node
 ```reboot```
 
