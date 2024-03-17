@@ -129,7 +129,7 @@ lsblk
 ### Fix disk issues (if restoring to new host)
 ```
 # Get UUID of disk
-blkid or note UUID from mkfs
+blkid # or note UUID from mkfs
 
 # Add disk to fstab
 sudo nano /etc/fstab
@@ -157,12 +157,8 @@ sudo nano /etc/fstab
 #### If you get the error **Failed to claim node because the Cloud thinks it is already claimed.**
 ```rm /var/lib/netdata/registry/netdata.public.unique.id```
 
-#### re-run qemu agent instalation script
-```apt-get install qemu-guest-agent```
-```systemctl start qemu-guest-agent```
-```qm set VMID --agent 1```
-
 ### Reboot Node
+```reboot```
 
 ## Sources
 http://ziemecki.net/content/proxmox-config-backups
