@@ -104,7 +104,7 @@ You should be back where you started. But let's hope it never comes to that.
 
 Install Proxmox onto new Hardware, values entered don’t matter as they will be replaced, just ensure you have network configured for temporary access.
 
-### Access Prxomox
+### Access Proxmox
 
 Access Proxmox fresh install via temp IP/PW.
 
