@@ -127,8 +127,8 @@ function check-num-backups {
 function copyfilesystem {
     echo "Tar files"
     # copy key system files
-    # tar --warning='no-file-ignored' -cvPf "$_filename1" --one-file-system /etc/.
-    tar --warning='no-file-ignored' -cvPf "$_filename1" --one-file-system --exclude='/etc/apparmor.d/foo/' /etc/.
+    tar --warning='no-file-ignored' -cvPf "$_filename1" --one-file-system /etc/.
+    #tar --warning='no-file-ignored' -cvPf "$_filename1" --one-file-system --exclude='/etc/apparmor.d/foo/' /etc/.
     tar --warning='no-file-ignored' -cvPf "$_filename2" /var/lib/pve-cluster/.
     tar --warning='no-file-ignored' -cvPf "$_filename3" --one-file-system /root/.
     tar --warning='no-file-ignored' -cvPf "$_filename4" /var/spool/cron/.
