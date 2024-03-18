@@ -112,7 +112,7 @@ Access Prxomox fresh install via temp IP/PW.
 ```passwd root```
 
 ### Disable Swap
-```sudo swapoff -a```
+```swapoff -a```
 
 ### Get current disk values (if restoring to new host)
 ```
