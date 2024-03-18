@@ -152,7 +152,7 @@ sudo nano /etc/fstab
 ```nano /etc/network/interfaces```
 
 #### Restart Network Service
-```systemctl restart systemd-networkd``` or ```service network-manager restart```
+```systemctl restart networking.service``` or ```systemctl restart networking``` or ```systemctl restart systemd-networkd``` or ```service network-manager restart```
 
 #### Bring interfaces UP if they are DOWN
 ```ip link set dev <interface> up```
