@@ -106,7 +106,7 @@ Install Proxmox onto new Hardware, values entered don’t matter as they will be
 
 ### Access Prxomox
 
-Access Prxomox fresh install via temp IP/PW.
+Access Proxmox fresh install via temp IP/PW.
 
 ### Change password (if temp used)
 ```passwd root```
@@ -159,6 +159,9 @@ sudo nano /etc/fstab
 
 ### Re-permission backup files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
+
+### Reboot Node
+```reboot```
 
 ### Reinstall Netdata Agent if required
 ```https://app.netdata.cloud/spaces/```
