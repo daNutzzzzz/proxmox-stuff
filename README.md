@@ -137,6 +137,9 @@ blkid # or note UUID from mkfs
 # Add disk to fstab
 sudo nano /etc/fstab
 ```
+### Fix repos
+```rm /etc/apt/sources.list.d/pve-enterprise.list```
+```echo "# deb https://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise" > /etc/apt/sources.list.d/ceph.list```
 
 ### Fix network interface issues (if restoring to new host)
 #### Show current interfaces
