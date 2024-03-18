@@ -160,6 +160,9 @@ sudo nano /etc/fstab
 ### Re-permission backup files
 ```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
 
+### Remove Proxmox Subscription Notice
+```sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service```
+
 ### Reboot Node
 ```reboot```
 
