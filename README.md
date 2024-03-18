@@ -111,6 +111,9 @@ Access Prxomox fresh install via temp IP/PW.
 ### Change password (if temp used)
 ```passwd root```
 
+### Disable Swap
+```sudo swapoff -a```
+
 ### Get current disk values (if restoring to new host)
 ```
 # Add disk to fstab
