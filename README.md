@@ -128,7 +128,7 @@ lsblk
 
 * Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh)  
 ```cd /root/; wget -qO prox_config_restore.sh https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh```
-* Make the script executable ```chmod +x ./prox_config_restore.sh```
+* Make the script executable ```chmod 0744 ./prox_config_restore.sh```
 * Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
 * Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
 
@@ -158,7 +158,7 @@ sudo nano /etc/fstab
 ```ip link set dev <interface> up```
 
 ### Re-permission backup files
-```chmod +x /home/rclone/rclone/rclone; chmod +x /home/rclone/rclonesync; chmod +x /home/Scripts/update_upgrade.sh```
+```chmod 0744 /home/rclone/rclone/rclone; chmod 0744 /home/rclone/rclonesync; chmod 0744 /home/Scripts/update_upgrade.sh```
 
 ### Remove Proxmox Subscription Notice
 ```sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service```
