@@ -127,9 +127,9 @@ lsblk
 ```
 
 * Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh)  
-```cd /root/; wget -qO prox_config_restore.sh https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh```
-* Make the script executable ```chmod +x ./prox_config_restore.sh```
-* Run the script `./prox_config_restore.sh proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
+```cd /root/; wget -qO pve_config_backup https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_restore.sh```
+* Make the script executable ```chmod +x ./pve_config_backup```
+* Run the script `./pve_config_backup proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz`
 * Press `ctrl + c` to exit instead of reboot or `Enter` to Reboot
 
 ### Fix disk issues (if restoring to new host)
