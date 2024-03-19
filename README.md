@@ -26,7 +26,7 @@ The script must be run as root, and can be run from cron or an interactive termi
 * Download the [script](https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_backup.sh)  
 ```cd /etc/cron.daily/; wget -qO- https://raw.githubusercontent.com/daNutzzzzz/proxmox-stuff/master/prox_config_backup.sh```
 * Set the permanent backups directory environment variable ```export BACK_DIR="/path/to/backup/directory"``` or edit the script to set the `$DEFAULT_BACK_DIR` variable to your preferred backup directory
-* Make the script executable ```chmod 0744 ./prox_config_backup.sh```
+* Make the script executable ```chmod 0744 pve_config_backup.sh```
 * Shut down ALL VMs + LXC Containers if you want to go the safe way. (Not required)
 * Run the script ```./prox_config_backup.sh```
 
@@ -34,7 +34,7 @@ The script must be run as root, and can be run from cron or an interactive termi
 
 * To set up a automatic cron job on a monthly (```/etc/cron.daily``` or ```/etc/cron.weekly``` can be used to!) schedule, running the prox_config_backup script, follow these steps:
 ```wget https://raw.githubusercontent.com/DerDanilo/proxmox-stuff/master/prox_config_backup.sh -O /etc/cron.daily/prox_config_backup```
-* Make the script executable ```chmod 0744 ./pve_config_backup.sh```
+* Make the script executable ```chmod 0744 pve_config_backup.sh```
 * Change ```DEFAULT_BACK_DIR="/home/pve"``` and ```MAX_BACKUPS=7``` to the values you want!
 
 Optional: [Execute run-parts](https://superuser.com/questions/402781/what-is-run-parts-in-etc-crontab-and-how-do-i-use-it) to see if it contains errors:
