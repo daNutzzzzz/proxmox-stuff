@@ -163,6 +163,13 @@ sudo nano /etc/fstab
 ### Remove Proxmox Subscription Notice
 ```sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service```
 
+### Add Fake Subscriptions
+```
+cd /root/; wget -qO pve-fake-subscription_0.0.9+git-1_all.deb https://github.com/Jamesits/pve-fake-subscription/releases/download/v0.0.9/pve-fake-subscription_0.0.9+git-1_all.deb
+dpkg -i pve-fake-subscription_*.deb
+echo "127.0.0.1 shop.maurer-it.com" | tee -a /etc/hosts
+rm pve-fake-subscription*.deb
+```
 ### Reboot Node
 ```reboot```
 
