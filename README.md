@@ -185,6 +185,12 @@ rm pve-fake-subscription*.deb
 ```/etc/init.d/kmod start```
 ```systemctl restart netdata```
 
+### Resinatall Tools
+```
+apt install nvme-cli -y && 
+```
+
+
 ### Reboot Node
 ```reboot```
 
