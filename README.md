@@ -1,4 +1,4 @@
-# Proxmox stuff
+/etc/cron.daily/pve_config_backup# Proxmox stuff
 
 This is a collection of stuff that I wrote for Proxmox. Its possble to use the [Ansible roles](#ansible) I wrote or to use the [bash scripts](#bash-scripts) for the backup & restore tasks.
 
@@ -157,8 +157,11 @@ sudo nano /etc/fstab
 #### Bring interfaces UP if they are DOWN
 ```ip link set dev <interface> up```
 
+### Create Backup Folder
+```mkdir /home/pve-host-0*/```
+
 ### Re-permission backup files
-```chmod 0744 /home/rclone/rclone/rclone; chmod 0744 /home/rclone/rclonesync; chmod 0744 /home/Scripts/update_upgrade.sh```
+```chmod 0744 /home/rclone/rclone/rclone; chmod 0744 /home/rclone/rclonesync; chmod 0744 /home/Scripts/update_upgrade.sh; chmod 0744 /etc/cron.daily/pve_config_backup```
 
 ### Remove Proxmox Subscription Notice
 ```sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service```
