@@ -163,6 +163,16 @@ sudo nano /etc/fstab
 ### Re-permission backup files
 ```chmod 0744 /home/rclone/rclone/rclone; chmod 0744 /home/rclone/rclonesync; chmod 0744 /home/Scripts/update_upgrade.sh; chmod 0744 /etc/cron.daily/pve_config_backup```
 
+### Proxmox VE Post Install Script
+```
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/post-pve-install.sh)"
+```
+
+### Proxmox Backup Server Post Install
+```
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/post-pbs-install.sh)"
+```
+
 ### Remove Proxmox Subscription Notice
 ```sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service```
 
@@ -173,6 +183,12 @@ dpkg -i pve-fake-subscription_*.deb
 echo "127.0.0.1 shop.maurer-it.com" | tee -a /etc/hosts
 rm pve-fake-subscription*.deb
 ```
+
+### Proxmox VE Processor Microcode
+```
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/microcode.sh)"
+```
+
 ### Reboot Node
 ```reboot```
 
