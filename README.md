@@ -168,6 +168,11 @@ sudo nano /etc/fstab
 bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/post-pve-install.sh)"
 ```
 
+### Proxmox VE CPU scalling
+```
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/scaling-governor.sh)"
+```
+
 ### Proxmox Backup Server Post Install
 ```
 bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/misc/post-pbs-install.sh)"
