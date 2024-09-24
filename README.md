@@ -57,7 +57,7 @@ For more info also see #5.
 
 ## Restore Options
 
-### Manuall
+### Manual
 
 On my machine, you end up with a GZipped file of about 1-5 MB with a name like "proxmox_backup_proxmoxhostname_2017-12-02.15.48.10.tar.gz".  
 Depending upon how you schedule it and the size of your server, that could eventually become a space issue so don't  
